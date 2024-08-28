@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boilermaker - FIFO | Ohlmec Engineering</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 450px;
+            margin: 5px auto;
+            padding: 5px;
+            background-color: #f0f8ff;
+        }
+        .job-teaser {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 1px solid #0066cc;
+        }
+        .header {
+            background-color: #0066cc;
+            color: white;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .logo-container {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+        }
+        .logo {
+            max-width: 45px;
+            max-height: 45px;
+        }
+        .job-title {
+            margin: 0;
+            font-size: 16px;
+        }
+        .content {
+            padding: 8px;
+            position: relative;
+            overflow: hidden;
+            min-height: 120px;
+        }
+        .slide {
+            display: none;
+            animation: fadeEffect 0.3s;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .slide h2 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .slide ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .slide li {
+            margin-bottom: 3px;
+            font-size: 12px;
+        }
+        .nav-dots {
+            text-align: center;
+            margin-top: 3px;
+        }
+        .dot {
+            height: 6px;
+            width: 6px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 2px;
+            cursor: pointer;
+        }
+        .dot.active {
+            background-color: #0066cc;
+        }
+        .full-ad-toggle {
+            text-align: right;
+            padding: 3px 8px;
+            background-color: #f0f8ff;
+            font-size: 12px;
+        }
+        .full-job-ad {
+            display: none;
+            padding: 8px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+            font-size: 12px;
+        }
+        .apply-button {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            background-color: #ff6600;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .apply-button:hover {
+            background-color: #ff8533;
+        }
+    </style>
+</head>
+<body>
+    <div class="job-teaser">
+        <div class="header">
+            <div class="logo-container">
+                <img src="https://imgur.com/nkdxZ9y.png" alt="Ohlmec Logo" class="logo">
+            </div>
+            <h1 class="job-title">Boilermaker - FIFO</h1>
+        </div>
+        <div class="content">
+            <div class="slide active">
+                <h2>About Ohlmec</h2>
+                <ul>
+                    <li>🏗️ Multi-discipline engineering services</li>
+                    <li>🔧 Structural, mechanical, electrical, civil works</li>
+                    <li>🤝 Partnerships in mining, energy, infrastructure</li>
+                    <li>🌐 Projects across the Pilbara Region</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Requirements</h2>
+                <ul>
+                    <li>📅 2+ years' experience in similar environment</li>
+                    <li>🛠️ Trade Certificate in Boilermaking</li>
+                    <li>🚗 Valid Australian Driver's Licence</li>
+                    <li>🦺 Safety certifications (Heights, Confined Space)</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Benefits</h2>
+                <ul>
+                    <li>💰 Weekly pay cycle</li>
+                    <li>🏆 Employee rewards and recognition programs</li>
+                    <li>🎓 Career progression opportunities</li>
+                    <li>🌈 Inclusive and diverse work environment</li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <div class="full-ad-toggle">
+            <label for="fullAdToggle">Show Full Job Ad</label>
+            <input type="checkbox" id="fullAdToggle" onclick="toggleFullAd()">
+        </div>
+        <div class="full-job-ad" id="fullJobAd">
+            <h2>Full Job Description</h2>
+            <p>Ohlmec is seeking experienced Boilermakers for ongoing FIFO shutdown works across the Pilbara Region commencing from 26/08.</p>
+            <h3>Requirements:</h3>
+            <ul>
+                <li>2+ years' experience in a similar environment</li>
+                <li>Trade Certificate in Boilermaking</li>
+                <li>Valid Australian Driver's Licence</li>
+                <li>Working at Heights (current within 2 years) optional</li>
+                <li>Confined Space Entry (current within 2 years) optional</li>
+                <li>Basic Fire certificate</li>
+                <li>Construction OHS White Card</li>
+                <li>Australian Work Rights</li>
+                <li>FMG induction highly desirable</li>
+            </ul>
+            <h3>What We Offer:</h3>
+            <ul>
+                <li>Weekly Pay Cycle</li>
+                <li>Employee Rewards and Recognition programs</li>
+                <li>World-class Employee Assistance program for you and your family</li>
+                <li>Employee and family member discounts to over 200 Australian based retailers</li>
+                <li>Career progression opportunities</li>
+            </ul>
+            <p>At Ohlmec, we welcome applications from all peoples, including Aboriginal and Torres Strait Island peoples, women, people with disabilities and people with diverse backgrounds. We have built a culture of respect where every voice matters.</p>
+        </div>
+        <a href="https://www.ohlmec.com.au/careers/" class="apply-button" target="_blank">Apply Now</a>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            slides[slideIndex-1].classList.add("active");  
+            dots[slideIndex-1].classList.add("active");
+        }
+
+        function toggleFullAd() {
+            const fullJobAd = document.getElementById("fullJobAd");
+            fullJobAd.style.display = fullJobAd.style.display === "block" ? "none" : "block";
+        }
+
+        // Auto-slide functionality
+        setInterval(() => {
+            plusSlides(1);
+        }, 2000); // Change slide every 2 seconds
+    </script>
+</body>
+</html>
